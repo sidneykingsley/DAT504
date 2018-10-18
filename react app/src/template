@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="x-icon" href="src/img/icons/tabicon.png"/>
+    <link rel="stylesheet" type="text/css" href="css/mainstyle.css"/>
+    <title>W2W</title>
+  </head>
+  <body>
+    <header>
+      <div class="headerChild1">
+        <div class="headerChild1Child1"><a href="#"><img src="src/img/icons/navIcon1.png" width="30px"></a></div>
+        <div class="headerChild1Child2"><a href="#"><img src="src/img/icons/navIcon2.png" width="30px"></a></div>
+        <div class="headerChild1Child2"><a href="#"><img src="src/img/icons/navIcon3.png" width="30px"></a></div>
+        <div class="headerChild1Child2"><a href="#"><img src="src/img/icons/navIcon4.png" width="30px"></a></div>
+        <div class="headerChild1Child2"><a href="#"><img src="src/img/icons/navIcon5.png" width="30px"></a></div>
+      </div>
+      <div class="headerChild2">what2wear</div>
+      <div class="headerChild3">8:05am</div>
+    </header>
+    <content>
+      <div class="mainContentBox">
+
+      </div>
+    </content>
+    <footer>
+      DAT504 Advanced Web Technologies
+    </footer>
+  </body>
+</html>
