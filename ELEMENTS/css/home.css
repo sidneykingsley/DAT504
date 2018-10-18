@@ -1,7 +1,6 @@
 /*index.html CONTENT CODE*/
 .contBoxChild1 {
   order: 0;
-  flex-shrink: 0;
 }
   .pageMessage {
     margin-top: 40px;
@@ -14,12 +13,10 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-	flex-flow: row wrap;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  flex-shrink: 1 0 auto;
 }
   .outfitWeatherContainer {
     order: 0;
@@ -29,7 +26,6 @@
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    flex-shrink: 0;
   }
     .weatherDisplayTable {
       display: flex;
@@ -38,7 +34,6 @@
       justify-content: space-between;
       align-items: flex-start;
       align-content: center;
-      flex-shrink: 0;
       }
       #weatherIcon {
         width: 150px;
@@ -73,8 +68,21 @@
     order: 1;
     display: flex;
     flex-direction: column;
-    flex-shrink: 1 0 auto;
     justify-content: space-between;
     align-items: center;
     align-content: center;
   }
+
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 600px) {
+    .headerChild1 {
+      flex-direction: column;
+      margin-top: 100px;
+    }
+    .contBoxChild2 {
+      margin-top: 50px;
+    }
+}
