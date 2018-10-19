@@ -1,0 +1,93 @@
+body {
+  color: #eee;
+  background-color: #000;
+}
+
+.signupForm {
+  position: relative;
+  color: white;
+  display: flex;
+  flex-flow: column;
+}
+
+.indexFormBoxCont {
+  border: solid white 2px;
+  width: 400px;
+  padding: 5px;
+  color: white;
+}
+
+.indexFormBox {
+  display: flex;
+  flex-flow: column;
+  margin-top: 20px;
+}
+
+.indexFormBoxTitle {
+  padding: 5px;
+}
+.indexFormButton {
+  display: flex;
+  justify-content: center;
+}
+
+.addFormBoxCont {
+  border: solid black 2px;
+  width: 415px;
+  height: 30px;
+  color: black;
+}
+#addFormBoxContText {
+  border: solid black 2px;
+  width: 400px;
+  padding: 5px;
+  color: black;
+}
+
+.addFormButton {
+  display: flex;
+  justify-content: center;
+}
+
+.addFormBox {
+  display: flex;
+  flex-flow: column;
+  margin-top: 20px;
+}
+
+.addFormBoxTitle {
+  padding: 5px;
+  font-size: 12px;
+}
+
+#indexSubmitButton {
+  margin-top: 40px;
+  border: solid white 2px;
+  background-color: white;
+  color: black;
+  width: 100px;
+  padding: 5px;
+}
+
+#indexSubmitButton:hover {
+  background-color: black;
+  color: white;
+}
+
+#addSubmitButton {
+  margin-top: 40px;
+  border: solid black 2px;
+  background-color: black;
+  color: white;
+  width: 100px;
+  padding: 5px;
+}
+
+#addSubmitButton:hover {
+  background-color: white;
+  color: black;
+}
+
+#addBoxUsername {
+  display: none;
+}
