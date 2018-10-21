@@ -13,6 +13,8 @@ if (urlVal === "/home.html") {
   var usernameVal = usernameCheck.replace(/[=&]/g, "");
   var locationCity = locationInfo.replace(/\+/g, " ");
   locationCity = locationCity.replace(/\%2C/g, ", ");
+  locationCity = locationCity.replace(/\%20/g, " ");
+  console.log(locationCity);
  }
 const urlForApi = apiUrl =>
   `https://api.openweathermap.org/data/2.5/weather?q=${locationCity}&appid=c49e1a20896cceeb541fa744cce3613e`

@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 const urlVal = window.location.pathname;
 if (urlVal === "/addclothes.html") {
   var signinUrl = window.location.search;
-  var locationInfoArray = signinUrl.match(/\=(\w+)$/g);
+  var locationInfoArray;
+  locationInfoArray = signinUrl.match(/[^=]*$/g);
   var locationInfo = locationInfoArray[0];
   var usernameArray = signinUrl.match(/=.*&/g);
   var usernameCheck = usernameArray[0];
   var usernameVal = usernameCheck.replace(/[=&]/g, "");
-  var locationCity = locationInfo.replace(/[=]/g, "");
+  var locationCity = locationInfo.replace(/\+/g, " ");
+  locationCity = locationCity.replace(/\%2C/g, ", ");
+  console.log(locationCity);
  }
 class AddNewItemPage extends Component {
   state = {
@@ -69,11 +72,11 @@ class AddNewItemPage extends Component {
               </select>
             </div>
             <div className="addFormBox">
-            <p className="addFormBoxTitle">WASH:</p>
+            <div className="addFormBoxTitle"><p>WASH:</p><p id="washInfoButton">(info)</p><p id="washInfo">(use the add and min buttons to enter how many times you would like to wear this item before washing it)</p></div>
               <input id="userInputWash" className="addFormBoxCont" value={this.state.washCount}name="timesWorn" onkeypress="return false;"/>
-              <div id="addCountButtonsCont">
-                <button id="reactBtn" className="addCountButton1" type="button" onClick={this.addNum}>ADD</button>
-                <button id="reactBtn" className="addCountButton2" type="button" onClick={this.minNum}>MIN</button>
+              <div id="addCountButtonCont">
+                <button id="reactBtn1" className="reactBtn" type="button" onClick={this.addNum}>ADD</button>
+                <button id="reactBtn2" className="reactBtn" type="button" onClick={this.minNum}>MIN</button>
               </div>
             </div>
             <div className="addFormBox">
