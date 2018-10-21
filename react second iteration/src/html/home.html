@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="x-icon" href="../img/icons/tab/tabiconfill.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/mainstyle.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/home.css"/>
+    <script src="../js/script.js"></script><!-- Load React. -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="../js/weather.js"></script>
+    <title>ELEMENTS</title>
+  </head>
+  <body>
+    <header>
+      <div class="headerChild1">
+        <div class="headerChild1Child1"><a href="home.html"><img src="../img/icons/nav/white/navIcon1.png" width="22px"></a></div>
+        <div class="headerChild1Child1"><a href="addclothes.html"><img src="../img/icons/nav/white/navIcon2.png" width="22px"></a></div>
+        <div class="headerChild1Child1"><a href="laundry.html"><img src="../img/icons/nav/white/navIcon3.png" width="22px"></a></div>
+        <div class="headerChild1Child1"><a href="yourclothes.html"><img src="../img/icons/nav/white/navIcon4.png" width="22px"></a></div>
+        <div class="headerChild1Child1"><a href="settings.html"><img src="../img/icons/nav/white/navIcon5.png" width="22px"></a></div>
+      </div>
+      <div class="headerChild2">elements</div>
+      <div id="headerChild3">time</div>
+    </header>
+    <content>
+      <div class="mainContentBox">
+        <div class="contBoxChild1">
+          <div class="pageMessage" id="timeOfDayWelcomeMessage">Good morning, *yourname*</div>
+        </div>
+        <div class="contBoxChild2">
+           <div class="outfitWeatherContainer">
+              <div class="weatherDisplayTable">
+                <!-- <img src="../img/icons/weather/placementicon.png" id="weatherIcon"> -->
+                <div id="weatherReactIcon"></div>
+                <div class="weatherText">
+                  <h1 id="weatherTemp">18&#176;</h1>
+                  <p id="weatherDesc">light rain</p>
+                </div>
+              </div>
+              <div class="outfitDisplayTable">
+                <h1 class="outfitDisplayTitle">Today's Outfit Breakdown:</h1>
+                <p class="topsSectionTitle">TOPS:</p>
+                <div class="displayBox" id="tShirtDisplayBox">tshirt</div>
+                <div class="displayBox" id="jumperDisplayBox">jumper</div>
+                <p class="topsSectionTitle">TOPS:</p>
+                <div class="displayBox" id="bottomsDisplayBox">trousers</div>
+                <p class="topsSectionTitle">TOPS:</p>
+                <div class="displayBox" id="outerwearDisplayBox">coat</div>
+              </div>
+          </div>
+          <div class="outfitGraphicContainer">
+                <img id="topsDisplayIcon" class="outfitGraphic1" src="../img/icons/clothes/topsIcon.png" width="200px">
+                <div id="topCaptions">
+                  <p id="tShirtDisplayBox">tshirt</p>
+                  <p id="jumperDisplayBox">jumper</p>
+                  <p id="outerwearDisplayBox">coat</p>
+                </div>
+                <img id="bottomsDisplayIcon" class="outfitGraphic2" src="../img/icons/clothes/bottomsIcon.png" width="200px">
+                <div id="bottomCaptions">
+                  <p id="bottomsDisplayBox">trousers</p>
+                </div>
+          </div>
+        </div>
+      </div>
+    </content>
+    <footer>
+      DAT504 Advanced Web Technologies
+    </footer>
+  </body>
+</html>
