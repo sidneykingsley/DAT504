@@ -9,7 +9,7 @@ if (urlVal === "/addclothes.html") {
   var usernameCheck = usernameArray[0];
   var usernameVal = usernameCheck.replace(/[=&]/g, "");
   var locationCity = locationInfo.replace(/\+/g, " ");
-  locationCity = locationCity.replace(/\%2C/g, ", ");
+  locationCity = locationCity.replace(/%2C/g, ", ");
   console.log(locationCity);
  }
 class AddNewItemPage extends Component {
@@ -34,8 +34,8 @@ class AddNewItemPage extends Component {
       <div>
       <header>
         <div className="headerChild1">
-          <div className="headerChild1Child1"><a href={"home.html?username="+usernameVal+"&city="+locationCity}><img src={require('../img/icons/nav/black/navicon1.png')} width="22px" /></a></div>
-          <div className="headerChild1Child1"><a href="addclothes.html"><img src={require('../img/icons/nav/black/navicon2.png')} width="22px"/></a></div>
+          <div className="headerChild1Child1"><a href={"home.html?username="+usernameVal+"&city="+locationCity}><img alt="" src={require('../img/icons/nav/black/navicon1.png')} width="22px" /></a></div>
+          <div className="headerChild1Child1"><a href="addclothes.html"><img alt="" src={require('../img/icons/nav/black/navicon2.png')} width="22px"/></a></div>
         </div>
         <div className="headerChild2">elements</div>
         <div id="headerChild3">{findTime()}</div>
