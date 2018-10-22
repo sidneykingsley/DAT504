@@ -14,7 +14,7 @@ if (urlVal === "/addclothes.html") {
  }
 class AddNewItemPage extends Component {
   state = {
-    washCount:1
+    washCount:2
   }
 
   addNum = () =>{

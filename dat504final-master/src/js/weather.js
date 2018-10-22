@@ -111,9 +111,9 @@ class WeatherApi extends Component {
                 <h1 className="outfitDisplayTitle">Todays Outfit Breakdown:</h1>
                 <p className="topsSectionTitle">TOPS:</p>
                 <div className="displayBox" id="tShirtDisplayBox">tshirt</div>
-                <p className="topsSectionTitle">TOPS:</p>
+                <p className="topsSectionTitle">BOTTOMS:</p>
                 <div className="displayBox" id="bottomsDisplayBox">trousers</div>
-                <p className="topsSectionTitle">TOPS:</p>
+                <p className="topsSectionTitle">OUTERWEAR:</p>
                 <div className="displayBox" id="outerwearDisplayBox">coat</div>
               </div>
             </div>
@@ -188,10 +188,26 @@ if (urlVal === "/home.html") {
         return type.category === "3";
         });
         console.log("OuterWear", findOut);
+        if (findTops.length === 0){
+          document.getElementById('tShirtDisplayBox').innerHTML = "nothign";
+        }
+        else {
+          document.getElementById('tShirtDisplayBox').innerHTML = findTops[Math.floor(Math.random()*findTops.length)].colour +" "+ findTops[0].type;
 
-        document.getElementById('tShirtDisplayBox').innerHTML = findTops[0].colour +" "+ findTops[0].type;
-        document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[0].colour +" "+ findBottoms[0].type;
-        document.getElementById('outerwearDisplayBox').innerHTML = findOut[0].colour +" "+ findOut[0].type;
+        }
+        if (findBottoms.length === 0){
+          document.getElementById('bottomsDisplayBox').innerHTML = "nothign";
+        }
+        else {
+          document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[Math.floor(Math.random()*findBottoms.length)].colour +" "+ findBottoms[0].type;
+        }
+        if (!findBottoms.length === 0){
+          document.getElementById('outerwearDisplayBox').innerHTML = "nothign";
+        }
+        else {
+          document.getElementById('outerwearDisplayBox').innerHTML = findOut[Math.floor(Math.random()*findOut.length)].colour +" "+ findOut[0].type;
+        }
+
       });
   }
 }
