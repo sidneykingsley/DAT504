@@ -245,7 +245,8 @@ window.onload = function() {
         }
         else {
           if (tempBoolean === true) {
-            var topsSelection = findTshirt[Math.floor(Math.random()*findOut.length)].colour +" "+ findTshirt[0].type;
+            var topsSelection = findTshirt[0].colour +" "+ findTshirt[0].type;
+            //Math.floor(Math.random()*findOut.length)
           }
           else {
             var topsSelection = findJumper[0].colour +" "+ findJumper[0].type;
@@ -260,7 +261,7 @@ window.onload = function() {
         }
         else {
           if (tempBoolean === true) {
-            var bottomsSelection = findShorts[Math.floor(Math.random()*findOut.length)].colour +" "+ findShorts[0].type;
+            var bottomsSelection = findShorts[0].colour +" "+ findShorts[0].type;
           }
           else {
             var bottomsSelection = findTrousers[0].colour +"  "+ findTrousers[0].type;
@@ -277,7 +278,7 @@ window.onload = function() {
             var outwearSelection = findWaterproofCoat[0].colour +" Waterproof "+ findWaterproofCoat[0].type;
           }
           else {
-            var outwearSelection = findCoat[Math.floor(Math.random()*findOut.length)].colour +" "+ findCoat[0].type;
+            var outwearSelection = findNotmalCoat[0].colour +" "+ findCoat[0].type;
           }
           document.getElementById('outerwearDisplayBox').innerHTML = outwearSelection;
           document.getElementById('outerwearDisplayGraph').innerHTML = outwearSelection;
