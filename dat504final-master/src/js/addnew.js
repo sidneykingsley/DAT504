@@ -47,19 +47,18 @@ class AddNewItemPage extends Component {
             <div className="addFormBox">
               <p className="addFormBoxTitle">TYPE:</p>
               <select name="type" className="addFormBoxCont">
-                <option value="tshirt">T-Shirt</option>
-                <option value="jumper">Jumper</option>
-                <option value="trousers">Trousers</option>
-                <option value="shorts">Shorts</option>
-                <option value="coat">Coat</option>
+                <option value="T-Shirt">T-Shirt</option>
+                <option value="Jumper">Jumper</option>
+                <option value="Trousers">Trousers</option>
+                <option value="Shorts">Shorts</option>
+                <option value="Coat">Coat</option>
               </select>
             </div>
             <div className="addFormBox">
               <p className="addFormBoxTitle">WARMTH:</p>
               <select name="warmth" className="addFormBoxCont">
-                <option value="3">Warm</option>
-                <option value="2">Cool</option>
-                <option value="1">Cold</option>
+                <option value="2">For cold weather</option>
+                <option value="1">For hot weather</option>
 
               </select>
             </div>
@@ -82,8 +81,8 @@ class AddNewItemPage extends Component {
             <div className="addFormBox">
               <p className="addFormBoxTitle">WATERPROOFING:</p>
               <select name="waterproofing" className="addFormBoxCont">
-                <option value="true">Waterproof</option>
                 <option value="false">Not Waterproof</option>
+                <option value="true">Waterproof</option>
               </select>
             </div>
             <div className="addFormBox">
