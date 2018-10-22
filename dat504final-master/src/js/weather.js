@@ -228,8 +228,8 @@ window.onload = function() {
         });
         console.log("Not-Waterproof", findNormalCoat);
 
-        var affectTempData = document.getElementById("weatherTemp").textContent;
-        var affectRainData = document.getElementById("weatherDesc").textContent;
+        if (document.getElementById("weatherTemp").textContent != null) var affectTempData = document.getElementById("weatherTemp").textContent;
+        if (document.getElementById("weatherDesc").textContent != null) var affectRainData = document.getElementById("weatherDesc").textContent;
         var rainSelect = affectRainData.match(/rain/g);
         if (rainSelect != null){var rainBoolean = true;}
         else {rainBoolean = false;}
@@ -245,11 +245,10 @@ window.onload = function() {
         }
         else {
           if (tempBoolean === true) {
-            var topsSelection = findTshirt[0].colour +" "+ findTshirt[0].type;
-            //Math.floor(Math.random()*findOut.length)
+            var topsSelection = findTshirt[Math.floor(Math.random()*findTshirt.length)].colour +" "+ findTshirt[0].type;
           }
           else {
-            var topsSelection = findJumper[0].colour +" "+ findJumper[0].type;
+            var topsSelection = findJumper[Math.floor(Math.random()*findJumper.length)].colour +" "+ findJumper[0].type;
           }
           document.getElementById('tShirtDisplayBox').innerHTML = topsSelection;
           document.getElementById('tShirtDisplayGraph').innerHTML = topsSelection;
@@ -261,10 +260,10 @@ window.onload = function() {
         }
         else {
           if (tempBoolean === true) {
-            var bottomsSelection = findShorts[0].colour +" "+ findShorts[0].type;
+            var bottomsSelection = findShorts[Math.floor(Math.random()*findShorts.length)].colour +" "+ findShorts[0].type;
           }
           else {
-            var bottomsSelection = findTrousers[0].colour +"  "+ findTrousers[0].type;
+            var bottomsSelection = findTrousers[Math.floor(Math.random()*findTrousers.length)].colour +"  "+ findTrousers[0].type;
           }
           document.getElementById('bottomsDisplayBox').innerHTML = bottomsSelection;
           document.getElementById('bottomsDisplayGraph').innerHTML = bottomsSelection;
@@ -275,10 +274,10 @@ window.onload = function() {
         }
         else {
           if (rainBoolean === true) {
-            var outwearSelection = findWaterproofCoat[0].colour +" Waterproof "+ findWaterproofCoat[0].type;
+            var outwearSelection = findWaterproofCoat[Math.floor(Math.random()*findWaterproofCoat.length)].colour +" Waterproof "+ findWaterproofCoat[0].type;
           }
           else {
-            var outwearSelection = findNormalCoat[0].colour +" "+ findCoat[0].type;
+            var outwearSelection = findNormalCoat[Math.floor(Math.random()*findNormalCoat.length)].colour +" "+ findCoat[0].type;
           }
           document.getElementById('outerwearDisplayBox').innerHTML = outwearSelection;
           document.getElementById('outerwearDisplayGraph').innerHTML = outwearSelection;
