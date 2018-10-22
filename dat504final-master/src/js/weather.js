@@ -158,43 +158,47 @@ function welcomeMessageFunc() {
   return welcMessage;
 }
 
-window.onload = function() {
-  fetch(url)
-    .then(function(response) {
-        return response.json();
-  })
-  .then(function(myJson) {
-      findUser =  myJson.filter(
-        function(username) {
-          return username.username === usernameVal;
-        }
-      );
-      console.log("all items from username", findUser[0].type);
 
-      findTops = findUser.filter(function(type) {
-      return type.category === "1";
+if (urlVal === "/home.html") {
+
+  window.onload = function() {
+    fetch(url)
+      .then(function(response) {
+          return response.json();
+    })
+    .then(function(myJson) {
+        findUser =  myJson.filter(
+          function(username) {
+            return username.username === usernameVal;
+          }
+        );
+        console.log("all items from username", findUser[0].type);
+
+        findTops = findUser.filter(function(type) {
+        return type.category === "1";
+        });
+        console.log("Tops", findTops[0].type);
+
+        findBottoms =  findUser.filter(function(type) {
+        return type.category === "2";
+        });
+        console.log("Bottoms", findBottoms);
+
+        findOut =  findUser.filter(function(type) {
+        return type.category === "3";
+        });
+        console.log("OuterWear", findOut);
+
+
+        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
+        document.getElementById('tShirtDisplayBox').innerHTML = findTops[0].colour +" "+ findTops[0].type;
+        document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[0].colour +" "+ findBottoms[0].type;
+        document.getElementById('outerwearDisplayBox').innerHTML = findOut[0].colour +" "+ findOut[0].type;
+        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
+        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
+        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
       });
-      console.log("Tops", findTops[0].type);
-
-      findBottoms =  findUser.filter(function(type) {
-      return type.category === "2";
-      });
-      console.log("Bottoms", findBottoms);
-
-      findOut =  findUser.filter(function(type) {
-      return type.category === "3";
-      });
-      console.log("OuterWear", findOut);
-
-
-      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
-      document.getElementById('tShirtDisplayBox').innerHTML = findTops[0].colour +" "+ findTops[0].type;
-      document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[0].colour +" "+ findBottoms[0].type;
-      document.getElementById('outerwearDisplayBox').innerHTML = findOut[0].colour +" "+ findOut[0].type;
-      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
-      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
-      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
-    });
+  }
 }
 
 // console.log(roundedTempData);
