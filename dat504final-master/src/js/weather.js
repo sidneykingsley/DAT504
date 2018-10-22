@@ -19,8 +19,6 @@ if (urlVal === "/home.html") {
 
 let findUser;
 let findTops;
-let findTshirts;
-let findJumpers;
 let findBottoms;
 let findOut;
 // let roundedTempData;
@@ -120,12 +118,12 @@ class WeatherApi extends Component {
             <div className="outfitGraphicContainer">
               <img alt="" id="topsDisplayIcon" className="outfitGraphic1" src={require('../img/icons/clothes/topsIcon.png')} width="200px" />
               <div id="topCaptions">
-                <p id="tShirtDisplayBox">tshirt</p>
-                <p id="outerwearDisplayBox">coat</p>
+                <p id="tShirtDisplayGraph">tshirt</p>
+                <p id="outerwearDisplayGraph">coat</p>
               </div>
               <img alt="" id="bottomsDisplayIcon" className="outfitGraphic2" src={require('../img/icons/clothes/bottomsIcon.png')} width="200px" />
               <div id="bottomCaptions">
-                <p id="bottomsDisplayBox">trousers</p>
+                <p id="bottomsDisplayGraph">trousers</p>
               </div>
             </div>
           </div>
@@ -161,7 +159,7 @@ function welcomeMessageFunc() {
 
 if (urlVal === "/home.html") {
 
-  window.onload = function() {
+window.onload = function() {
     fetch(url)
       .then(function(response) {
           return response.json();
@@ -188,29 +186,43 @@ if (urlVal === "/home.html") {
         return type.category === "3";
         });
         console.log("OuterWear", findOut);
+
         if (findTops.length === 0){
-          document.getElementById('tShirtDisplayBox').innerHTML = "nothign";
+          document.getElementById('tShirtDisplayBox').innerHTML = "No tops have been added yet.";
+          document.getElementById('tShirtDisplayGraph').innerHTML = "No tops have been added yet.";
         }
         else {
-          document.getElementById('tShirtDisplayBox').innerHTML = findTops[Math.floor(Math.random()*findTops.length)].colour +" "+ findTops[0].type;
+          var topsSelection = findTops[Math.floor(Math.random()*findTops.length)].colour +" "+ findTops[0].type;
+          document.getElementById('tShirtDisplayBox').innerHTML = topsSelection;
+          document.getElementById('tShirtDisplayGraph').innerHTML = topsSelection;
 
         }
         if (findBottoms.length === 0){
-          document.getElementById('bottomsDisplayBox').innerHTML = "nothign";
+          document.getElementById('bottomsDisplayBox').innerHTML = "No bottoms have been added yet.";
+          document.getElementById('bottomsDisplayGraph').innerHTML = "No bottoms have been added yet.";
         }
         else {
-          document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[Math.floor(Math.random()*findBottoms.length)].colour +" "+ findBottoms[0].type;
+          var bottomsSelection = findBottoms[Math.floor(Math.random()*findBottoms.length)].colour +" "+ findBottoms[0].type;
+          document.getElementById('bottomsDisplayBox').innerHTML = bottomsSelection;
+          document.getElementById('bottomsDisplayGraph').innerHTML = bottomsSelection;
         }
         if (!findBottoms.length === 0){
-          document.getElementById('outerwearDisplayBox').innerHTML = "nothign";
+          document.getElementById('outerwearDisplayBox').innerHTML = "No outwear has been added yet.";
+          document.getElementById('outerwearDisplayGraph').innerHTML = "No tops have been added yet.";
         }
         else {
-          document.getElementById('outerwearDisplayBox').innerHTML = findOut[Math.floor(Math.random()*findOut.length)].colour +" "+ findOut[0].type;
+          var outwearSelection = findOut[Math.floor(Math.random()*findOut.length)].colour +" "+ findOut[0].type;
+          document.getElementById('outerwearDisplayBox').innerHTML = outwearSelection;
+          document.getElementById('outerwearDisplayGraph').innerHTML = outwearSelection;
         }
 
       });
   }
 }
+
+// function findDay() {
+//   date
+// }
 
 // console.log(roundedTempData);
 
