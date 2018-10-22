@@ -49,7 +49,8 @@ class WeatherApi extends Component {
     fetch(urlForApi(this.props.apiUrl))
       .then(response => {
         if (!response.ok) {
-          throw Error("Please enter an existing location.")
+          //throw new Error(locationCity+" is not a country, city or town. Please enter an existing location.")
+          window.location.replace("/locationerror.html")
         }
         return response
       })
@@ -228,8 +229,10 @@ window.onload = function() {
         });
         console.log("Not-Waterproof", findNormalCoat);
 
-        if (document.getElementById("weatherTemp").textContent != null) var affectTempData = document.getElementById("weatherTemp").textContent;
-        if (document.getElementById("weatherDesc").textContent != null) var affectRainData = document.getElementById("weatherDesc").textContent;
+        if (document.getElementById("weatherTemp") !== null) var affectTempData = document.getElementById("weatherTemp").textContent;
+        else var affectTempData="";
+        if (document.getElementById("weatherDesc") !== null) var affectRainData = document.getElementById("weatherDesc").textContent;
+        else var affectRainData="";
         var rainSelect = affectRainData.match(/rain/g);
         if (rainSelect != null){var rainBoolean = true;}
         else {rainBoolean = false;}
@@ -250,41 +253,41 @@ window.onload = function() {
         else {
           if (tempBoolean === true) var topsSelection = findTshirt[Math.floor(Math.random()*findTshirt.length)].colour +" "+ findTshirt[0].type;
           else var topsSelection = findJumper[Math.floor(Math.random()*findJumper.length)].colour +" "+ findJumper[0].type;
-          document.getElementById('tShirtDisplayBox').innerHTML = topsSelection;
-          document.getElementById('tShirtDisplayGraph').innerHTML = topsSelection;
+          if (document.getElementById("tShirtDisplayBox") !== null) document.getElementById('tShirtDisplayBox').innerHTML = topsSelection;
+          if (document.getElementById("tShirtDisplayGraph") !== null) document.getElementById('tShirtDisplayGraph').innerHTML = topsSelection;
         }
 
         if (findShorts.length === 0){
-          document.getElementById('bottomsDisplayBox').innerHTML = "A pair of shorts haven't been added.";
-          document.getElementById('bottomsDisplayGraph').innerHTML = "A pair of shorts haven't been added.";
+          if (document.getElementById("bottomsDisplayBox") !== null) document.getElementById('bottomsDisplayBox').innerHTML = "A pair of shorts haven't been added.";
+          if (document.getElementById("bottomsDisplayGraph") !== null) document.getElementById('bottomsDisplayGraph').innerHTML = "A pair of shorts haven't been added.";
         }
         else if (findTrousers.length === 0){
-          document.getElementById('bottomsDisplayBox').innerHTML = "A pair of trousers haven't been added.";
-          document.getElementById('bottomsDisplayGraph').innerHTML = "A pair of trousers haven't been added.";
+          if (document.getElementById("bottomsDisplayBox") !== null) document.getElementById('bottomsDisplayBox').innerHTML = "A pair of trousers haven't been added.";
+          if (document.getElementById("bottomsDisplayGraph") !== null) document.getElementById('bottomsDisplayGraph').innerHTML = "A pair of trousers haven't been added.";
         }
         else {
           if (tempBoolean === true) var bottomsSelection = findShorts[Math.floor(Math.random()*findShorts.length)].colour +" "+ findShorts[0].type;
           else var bottomsSelection = findTrousers[Math.floor(Math.random()*findTrousers.length)].colour +"  "+ findTrousers[0].type;
-          document.getElementById('bottomsDisplayBox').innerHTML = bottomsSelection;
-          document.getElementById('bottomsDisplayGraph').innerHTML = bottomsSelection;
+          if (document.getElementById("bottomsDisplayBox") !== null) document.getElementById('bottomsDisplayBox').innerHTML = bottomsSelection;
+          if (document.getElementById("bottomsDisplayGraph") !== null) document.getElementById('bottomsDisplayGraph').innerHTML = bottomsSelection;
         }
         if (findWaterproofCoat.length === 0){
-          document.getElementById('outerwearDisplayBox').innerHTML = "A waterproof coat hasn't been added.";
-          document.getElementById('outerwearDisplayGraph').innerHTML = "A waterproof coat hasn't been added.";
+          if (document.getElementById("outerwearDisplayBox") !== null) document.getElementById('outerwearDisplayBox').innerHTML = "A waterproof coat hasn't been added.";
+          if (document.getElementById("outerwearDisplayGraph") !== null) document.getElementById('outerwearDisplayGraph').innerHTML = "A waterproof coat hasn't been added.";
         }
         if (findNormalCoat.length === 0){
-          document.getElementById('outerwearDisplayBox').innerHTML = "A non-waterproof coat hasn't been added.";
-          document.getElementById('outerwearDisplayGraph').innerHTML = "A non-waterproof coat hasn't been added.";
+          if (document.getElementById("outerwearDisplayBox") !== null) document.getElementById('outerwearDisplayBox').innerHTML = "A non-waterproof coat hasn't been added.";
+          if (document.getElementById("outerwearDisplayGraph") !== null) document.getElementById('outerwearDisplayGraph').innerHTML = "A non-waterproof coat hasn't been added.";
         }
         else {
           if (rainBoolean === true) var outwearSelection = findWaterproofCoat[Math.floor(Math.random()*findWaterproofCoat.length)].colour +" Waterproof "+ findWaterproofCoat[0].type;
           else var outwearSelection = findNormalCoat[Math.floor(Math.random()*findNormalCoat.length)].colour +" "+ findCoat[0].type;
-          document.getElementById('outerwearDisplayBox').innerHTML = outwearSelection;
-          document.getElementById('outerwearDisplayGraph').innerHTML = outwearSelection;
+          if (document.getElementById("outerwearDisplayBox") !== null) document.getElementById('outerwearDisplayBox').innerHTML = outwearSelection;
+          if (document.getElementById("outerwearDisplayGraph") !== null) document.getElementById('outerwearDisplayGraph').innerHTML = outwearSelection;
         }
 
         if (findTops.length === 0 & findBottoms.length === 0 & findCoat.length === 0) {
-          document.getElementById('timeOfDayWelcomeMessage').innerHTML = "Welcome "+usernameVal+", to add your clothes click on the '+' icon";
+          if (document.getElementById("timeOfDayWelcomeMessage") !== null) document.getElementById('timeOfDayWelcomeMessage').innerHTML = "Welcome "+usernameVal+", to add your clothes click on the '+' icon";
         }
       });
   }

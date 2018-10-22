@@ -60,6 +60,14 @@ class App extends Component {
       <AddNewItemPage></AddNewItemPage>
     );
     }
+    else if (urlVal === "/locationerror.html") {
+    return (
+      <div>
+      <h1 className="pageMessage">Please enter an existing location.</h1>
+      <a href="index.html"  className="pageMessage"><p>try again</p></a>
+      </div>
+    );
+    }
   }
 }
 export default App;
