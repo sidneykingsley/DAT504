@@ -278,7 +278,7 @@ window.onload = function() {
             var outwearSelection = findWaterproofCoat[0].colour +" Waterproof "+ findWaterproofCoat[0].type;
           }
           else {
-            var outwearSelection = findNotmalCoat[0].colour +" "+ findCoat[0].type;
+            var outwearSelection = findNormalCoat[0].colour +" "+ findCoat[0].type;
           }
           document.getElementById('outerwearDisplayBox').innerHTML = outwearSelection;
           document.getElementById('outerwearDisplayGraph').innerHTML = outwearSelection;
