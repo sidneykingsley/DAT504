@@ -179,11 +179,6 @@ if (urlVal === "/home.html") {
         });
         console.log("Tops", findTops);
 
-        findJumpers = findTops.filter(function(type) {
-        return type === "Jumper";
-        });
-        console.log("Jumpers", findJumpers);
-
         findBottoms =  findUser.filter(function(type) {
         return type.category === "2";
         });
