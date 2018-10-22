@@ -57,9 +57,8 @@ class AddNewItemPage extends Component {
             <div className="addFormBox">
               <p className="addFormBoxTitle">WARMTH:</p>
               <select name="warmth" className="addFormBoxCont">
-                <option value="2">For cold weather</option>
                 <option value="1">For hot weather</option>
-
+                <option value="2">For cold weather</option>
               </select>
             </div>
             <div className="addFormBox">
