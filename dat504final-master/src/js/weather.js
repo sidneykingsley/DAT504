@@ -189,8 +189,8 @@ window.onload = function() {
 
       // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
       document.getElementById('tShirtDisplayBox').innerHTML = findTops[0].colour +" "+ findTops[0].type;
-      document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[0].colour +" "+ findTops[0].type;
-      document.getElementById('outerwearDisplayBox').innerHTML = findOut[0].colour +" "+ findTops[0].type;
+      document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[0].colour +" "+ findBottoms[0].type;
+      document.getElementById('outerwearDisplayBox').innerHTML = findOut[0].colour +" "+ findOut[0].type;
       // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
       // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
       // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
