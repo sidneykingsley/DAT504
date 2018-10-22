@@ -19,6 +19,8 @@ if (urlVal === "/home.html") {
 
 let findUser;
 let findTops;
+let findTshirts;
+let findJumpers;
 let findBottoms;
 let findOut;
 // let roundedTempData;
@@ -108,8 +110,7 @@ class WeatherApi extends Component {
               <div className="outfitDisplayTable">
                 <h1 className="outfitDisplayTitle">Todays Outfit Breakdown:</h1>
                 <p className="topsSectionTitle">TOPS:</p>
-                <div className="displayBox" id="tShirtDisplayBox">{}</div>
-                <div className="displayBox" id="jumperDisplayBox">jumper</div>
+                <div className="displayBox" id="tShirtDisplayBox">tshirt</div>
                 <p className="topsSectionTitle">TOPS:</p>
                 <div className="displayBox" id="bottomsDisplayBox">trousers</div>
                 <p className="topsSectionTitle">TOPS:</p>
@@ -120,7 +121,6 @@ class WeatherApi extends Component {
               <img alt="" id="topsDisplayIcon" className="outfitGraphic1" src={require('../img/icons/clothes/topsIcon.png')} width="200px" />
               <div id="topCaptions">
                 <p id="tShirtDisplayBox">tshirt</p>
-                <p id="jumperDisplayBox">jumper</p>
                 <p id="outerwearDisplayBox">coat</p>
               </div>
               <img alt="" id="bottomsDisplayIcon" className="outfitGraphic2" src={require('../img/icons/clothes/bottomsIcon.png')} width="200px" />
@@ -177,7 +177,12 @@ if (urlVal === "/home.html") {
         findTops = findUser.filter(function(type) {
         return type.category === "1";
         });
-        console.log("Tops", findTops[0].type);
+        console.log("Tops", findTops);
+
+        findJumpers = findTops.filter(function(type) {
+        return type === "Jumper";
+        });
+        console.log("Jumpers", findJumpers);
 
         findBottoms =  findUser.filter(function(type) {
         return type.category === "2";
@@ -189,14 +194,9 @@ if (urlVal === "/home.html") {
         });
         console.log("OuterWear", findOut);
 
-
-        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
         document.getElementById('tShirtDisplayBox').innerHTML = findTops[0].colour +" "+ findTops[0].type;
         document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[0].colour +" "+ findBottoms[0].type;
         document.getElementById('outerwearDisplayBox').innerHTML = findOut[0].colour +" "+ findOut[0].type;
-        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
-        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
-        // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
       });
   }
 }
