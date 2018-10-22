@@ -21,6 +21,7 @@ let findUser;
 let findTops;
 let findBottoms;
 let findOut;
+// let roundedTempData;
 
 const urlForApi = apiUrl =>
   `https://api.openweathermap.org/data/2.5/weather?q=${locationCity}&appid=c49e1a20896cceeb541fa744cce3613e`
@@ -62,6 +63,7 @@ class WeatherApi extends Component {
     const descData = this.state.WeatherApiData.weather[0].description;
     const iconData = this.state.WeatherApiData.weather[0].icon;
     const srcIconData = iconData;
+
     function displayData() {
           if (roundedTempData >= 20) {
             console.log("greater than 20");
@@ -106,7 +108,7 @@ class WeatherApi extends Component {
               <div className="outfitDisplayTable">
                 <h1 className="outfitDisplayTitle">Todays Outfit Breakdown:</h1>
                 <p className="topsSectionTitle">TOPS:</p>
-                <div className="displayBox" id="tShirtDisplayBox">{displayData()}</div>
+                <div className="displayBox" id="tShirtDisplayBox">{}</div>
                 <div className="displayBox" id="jumperDisplayBox">jumper</div>
                 <p className="topsSectionTitle">TOPS:</p>
                 <div className="displayBox" id="bottomsDisplayBox">trousers</div>
@@ -168,9 +170,34 @@ window.onload = function() {
         }
       );
       console.log("all items from username", findUser[0].type);
-      document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
+
+      findTops = findUser.filter(function(type) {
+      return type.category === "1";
+      });
+      console.log("Tops", findTops[0].type);
+
+      findBottoms =  findUser.filter(function(type) {
+      return type.category === "2";
+      });
+      console.log("Bottoms", findBottoms);
+
+      findOut =  findUser.filter(function(type) {
+      return type.category === "3";
+      });
+      console.log("OuterWear", findOut);
+
+
+      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
+      document.getElementById('tShirtDisplayBox').innerHTML = findTops[0].colour +" "+ findTops[0].type;
+      document.getElementById('bottomsDisplayBox').innerHTML = findBottoms[0].colour +" "+ findTops[0].type;
+      document.getElementById('outerwearDisplayBox').innerHTML = findOut[0].colour +" "+ findTops[0].type;
+      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
+      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
+      // document.getElementById('jumperDisplayBox').innerHTML = findUser[0].type;
     });
 }
+
+// console.log(roundedTempData);
 
   // fetch(url)
   //   .then(function(response) {
